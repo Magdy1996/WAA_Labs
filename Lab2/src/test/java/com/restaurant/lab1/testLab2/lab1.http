@@ -1,12 +1,12 @@
 ### Get all books
 GET http://localhost:4000/books
-Accept: application/json
+#Accept: application/json
 
 ###
 
 ### Get a single book by ID
 GET http://localhost:4000/books/2
-Accept: application/json
+#Accept: application/json
 
 ###
 
@@ -36,5 +36,28 @@ Content-Type: application/json
 
 ### Delete a book by ID
 DELETE http://localhost:4000/books/2
+
+### Get a single book by ID (Media Type Versioning)
+GET http://localhost:4000/books/4
+Accept: application/cs.miu.edu-v2+json
+
+###
+
+### Get all books (Header Versioning)
+GET http://localhost:4000/books
+X-API-VERSION: 2
+#Accept: application/json
+
+###
+
+### Get all books (URI Versioning)
+GET http://localhost:4000/v1/books
+#Accept: application/json
+
+###
+
+### Get all books (Request Parameter Versioning)
+GET http://localhost:4000/books?version=1
+#Accept: application/json
 
 ###

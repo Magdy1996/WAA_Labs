@@ -85,7 +85,29 @@ public class BookController {
 
     }
 
+    // Versioning Example: Media type versioning
+    @GetMapping(value = "/{id}", produces = "application/cs.miu.edu-v2+json")
+    public ResponseEntity<Book> getBookByIdV2(@PathVariable int id) {
+        return getBookById(id);
+    }
 
+    // Versioning Example: Header versioning
+    @GetMapping(headers = "X-API-VERSION=2")
+    public ResponseEntity<List<Book>> getBooksV2() {
+        return ResponseEntity.ok(getListOfBooks());
+    }
+
+    // Versioning Example: URI versioning
+    @GetMapping("/v1")
+    public ResponseEntity<List<Book>> getBooksV1() {
+        return ResponseEntity.ok(getListOfBooks());
+    }
+
+    // Versioning Example: Request Parameter versioning
+    @GetMapping(params = "version=1")
+    public ResponseEntity<List<Book>> getBooksByRequestParam() {
+        return ResponseEntity.ok(getListOfBooks());
+    }
 
 
 }

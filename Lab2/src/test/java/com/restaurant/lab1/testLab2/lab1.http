@@ -1,0 +1,40 @@
+### Get all books
+GET http://localhost:4000/books
+Accept: application/json
+
+###
+
+### Get a single book by ID
+GET http://localhost:4000/books/2
+Accept: application/json
+
+###
+
+### Add a new book
+POST http://localhost:4000/books
+Content-Type: application/json
+
+{
+  "title": "New Book",
+  "isbn": "999-9999",
+  "price": 19.99
+}
+
+###
+
+### Update an existing book
+PUT http://localhost:4000/books/2
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "isbn": "234-5678",
+  "price": 12.50
+}
+
+###
+
+### Delete a book by ID
+DELETE http://localhost:4000/books/2
+
+###

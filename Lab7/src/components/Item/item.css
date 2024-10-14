@@ -1,0 +1,18 @@
+.todo-main li button {
+    display: none;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-main li:hover button {
+    display: block;
+}
+
+.todo-main li button:hover {
+    background-color: #c0392b;
+}
